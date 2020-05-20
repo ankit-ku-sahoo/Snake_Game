@@ -141,7 +141,6 @@ else{
   window.addEventListener('touchend', function(event) {
     touchendX = event.changedTouches[0].screenX;
     touchendY = event.changedTouches[0].screenY;
-    handleGesture();
 }, false);
 
   var changeX,changeY;
