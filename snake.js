@@ -23,8 +23,10 @@ function Snake() {
       ctx.fillRect(this.tail[i].x,
         this.tail[i].y, scale, scale);
     }
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "green";
+    ctx.strokeStyle="black";
     ctx.fillRect(this.x, this.y, scale, scale);
+    ctx.strokeRect(this.x, this.y, scale, scale);
     ctx.strokeRect(this.x, this.y, scale, scale);
   }
 
@@ -84,68 +86,6 @@ function Snake() {
         right.play();
       }
   }
-
-  this.detectswipe=function() {
-  swipe_det = new Object();
-  swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
-  var min_x = 30;  //min x swipe for horizontal swipe
-  var max_x = 30;  //max x difference for vertical swipe
-  var min_y = 50;  //min y swipe for vertical swipe
-  var max_y = 60;  //max y difference for horizontal swipe
-  var direction = "";
-  window.addEventListener('touchstart',function(e){
-    var t = e.touches[0];
-    swipe_det.sX = t.screenX; 
-    swipe_det.sY = t.screenY;
-  },false);
-  window.addEventListener('touchmove',function(e){
-    e.preventDefault();
-    var t = e.touches[0];
-    swipe_det.eX = t.screenX; 
-    swipe_det.eY = t.screenY;    
-  },false);
-  window.addEventListener('touchend',function(e){
-    //horizontal detection
-    if ((((swipe_det.eX - min_x > swipe_det.sX) || (swipe_det.eX + min_x < swipe_det.sX)) && ((swipe_det.eY < swipe_det.sY + max_y) && (swipe_det.sY > swipe_det.eY - max_y) && (swipe_det.eX > 0)))) {
-      if(swipe_det.eX > swipe_det.sX) direction = "Right";
-      else direction = "Left";
-    }
-    //vertical detection
-    else if ((((swipe_det.eY - min_y > swipe_det.sY) || (swipe_det.eY + min_y < swipe_det.sY)) && ((swipe_det.eX < swipe_det.sX + max_x) && (swipe_det.sX > swipe_det.eX - max_x) && (swipe_det.eY > 0)))) {
-      if(swipe_det.eY > swipe_det.sY) direction = "Down";
-      else direction = "Up";
-    }
-
-    if (direction != "") {
-      if(direction=="Up" && prev!="Up" && prev!="Down"){
-        this.xSpeed = 0;
-        this.ySpeed = -scale * 1;
-        prev="Up";
-        up.play();
-      }
-      else if(direction=="Down" && prev!="Up" && prev!="Down"){
-        this.xSpeed = 0;
-        this.ySpeed = scale * 1;
-        prev="Down";
-        down.play();
-      }
-      else if(direction=="Left" && prev!="Right" && prev!="Left"){
-        this.xSpeed = -scale * 1;
-        this.ySpeed = 0;
-        prev="Left";
-        left.play();
-      }
-      else if(direction=="Right" && prev!="Right" && prev!="Left"){
-        this.xSpeed = scale * 1;
-        this.ySpeed = 0;
-        prev="Right";
-        right.play();
-      }
-    }
-    direction = "";
-    swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
-  },false);  
-}
 
   this.eat = function(fruit) {
     var diffx=this.x - fruit.x;

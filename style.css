@@ -41,9 +41,11 @@
     text-align: center;
     width: 150px;
     padding: 5px;
+    margin-top: 5px;
     font-size: 1.5em;
     background-color: wheat;
     font-style: none;
+    border-radius: 5px;
     text-align: center;
     float: right;
     margin-right: 50px;

@@ -23,8 +23,10 @@ function Snake() {
       ctx.fillRect(this.tail[i].x,
         this.tail[i].y, scale, scale);
     }
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "green";
+    ctx.strokeStyle="black";
     ctx.fillRect(this.x, this.y, scale, scale);
+    ctx.strokeRect(this.x, this.y, scale, scale);
     ctx.strokeRect(this.x, this.y, scale, scale);
   }
 
@@ -1109,4 +1111,3 @@ this.checkCollisionAdv = function(x,y){
 }
 
 }
-

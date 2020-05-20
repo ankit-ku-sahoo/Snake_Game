@@ -43,7 +43,7 @@ down.src = "audio/down.mp3";
           ctx.fillStyle="gold";
           ctx.fillRect(i*scale,j*scale,scale,scale);
         }*/
-        ctx.fillStyle="gold";
+        ctx.fillStyle="#f7e697";
         ctx.fillRect(i*scale,j*scale,scale,scale);
       }
     }
