@@ -58,24 +58,7 @@ function Snake() {
 
   let prev;
   this.changeDirection = function(direction) {
-/*    switch(direction) {
-      case 'Up':
-        this.xSpeed = 0;
-        this.ySpeed = -scale * 1;
-        break;
-      case 'Down':
-        this.xSpeed = 0;
-        this.ySpeed = scale * 1;
-        break;
-      case 'Left':
-        this.xSpeed = -scale * 1;
-        this.ySpeed = 0;
-        break;
-      case 'Right':
-        this.xSpeed = scale * 1;
-        this.ySpeed = 0;
-        break;
-    }*/
+
       if(direction=="Up" && prev!="Up" && prev!="Down"){
         this.xSpeed = 0;
         this.ySpeed = -scale * this.speedfactor;

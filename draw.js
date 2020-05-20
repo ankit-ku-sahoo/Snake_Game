@@ -154,25 +154,22 @@ else{
   if (changeX_new>changeY_new && changeX<0) {
     console.log('Swiped left');
     direction="Left";
-    snake.changeDirection(direction);
   }
 
   if (changeX_new>changeY_new && changeX>0) {
     console.log('Swiped right');
     direction="Right";
-    snake.changeDirection(direction);
   }
 
   if (changeY_new>changeX_new && changeY<0) {
     console.log('Swiped up');
     direction="Up";
-    snake.changeDirection(direction);
   }
 
   if (changeY_new>changeX_new && changeY>0) {
    console.log('Swiped down');
    direction="Down";
-   snake.changeDirection(direction);
   }
+  snake.changeDirection(direction);
 
 }
