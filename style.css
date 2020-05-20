@@ -1,3 +1,7 @@
+body{
+    z-index: -1;
+}
+
 #board{
     background-color: silver;
     height: 700px;
@@ -5,6 +9,7 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1;
 }
 
 .score{
