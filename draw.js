@@ -133,12 +133,14 @@ else{
   let touchendX = 0;
   let touchendY = 0;
 
-  window.addEventListener('touchstart', function(event) {
+  const file=document.getElementById("canvas");
+
+  file.addEventListener('touchstart', function(event) {
     touchstartX = event.changedTouches[0].screenX;
     touchstartY = event.changedTouches[0].screenY;
 }, false);
 
-  window.addEventListener('touchend', function(event) {
+  file.addEventListener('touchend', function(event) {
     touchendX = event.changedTouches[0].screenX;
     touchendY = event.changedTouches[0].screenY;
 }, false);
